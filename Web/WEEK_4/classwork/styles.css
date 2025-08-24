@@ -1,0 +1,113 @@
+h4, p{
+    margin: 10px 0;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    background-color: lightblue;
+}
+.flex-item {
+    background-color: lightgrey;
+    padding: 10px;
+    margin: 5px;
+    flex: 1;
+    width: 300px;
+    height: 100px;
+    border: 1px solid #ccc;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+    height: 100vh;
+}
+
+header { grid-area: header;background-color: lightblue;}
+
+nav { grid-area: nav;background-color: lightgreen;}
+
+main { grid-area: main;background-color: lightcoral;}
+
+aside { grid-area: aside;background-color: lightgoldenrodyellow;}
+
+footer { grid-area: footer;background-color: lightpink;}
+
+.grid-item {
+    background-color: lightgrey;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/*absolute positioning example*/
+.card {
+    position: relative;
+    padding: 20px;
+    width: 300px;
+    height: 120px;
+    margin: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+ .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+.badge::after {
+    content: "New";
+    font-size: 12px;
+    font-weight: bold;
+}
+.badge::before {
+    content: "!";
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.badge:hover {
+    background-color: darkred;
+    cursor: pointer;
+}
+.badge:active {
+    background-color: crimson;
+}
+.badge:focus {
+    outline: 2px solid blue;
+    outline-offset: 2px;
+}
+.badge:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+.badge:checked {
+    background-color: green;
+    color: white;
+}
+.fluid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+@media(max-width: 600px) {
+    .fluid-container {
+        height: 30vh;
+        background-color: lightyellow;
+        border: 2px solid #ccc;
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+}
